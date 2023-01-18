@@ -1,1 +1,4 @@
-console.log("Hello TS in Node.JS. Developer");
+import { App } from "infra/App";
+
+const app = new App();
+app.init();
