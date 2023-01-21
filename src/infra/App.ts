@@ -15,5 +15,7 @@ export class App implements IService {
     const { tcp } = this;
     console.log("App Started");
     await tcp.init();
+
+    return true;
   }
 }
