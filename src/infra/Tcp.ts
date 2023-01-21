@@ -18,7 +18,7 @@ export class Tcp implements IService {
     }
     return Tcp.instance;
   }
-  async init(): Promise<void> {
+  async init() {
     const { server, routePrefix } = this;
     useExpressServer(server, {
       routePrefix,
@@ -27,7 +27,7 @@ export class Tcp implements IService {
       defaultErrorHandler: true,
     });
 
-    return new Promise((resolve: any) => {
+    return new Promise<boolean>((resolve: any) => {
       server.listen(4000, () => {
         console.log("Tcp service started on port 4000");
         return resolve(true);
